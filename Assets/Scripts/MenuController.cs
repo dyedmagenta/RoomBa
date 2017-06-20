@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
+/// <summary>
+/// Manages Menu UI
+/// </summary>
 public class MenuController : MonoBehaviour
 {
-
     private GameObject _mainMenu;
     private GameObject _optionsMenu;
     public static MenuController Instance { get; private set; }
@@ -22,7 +24,6 @@ public class MenuController : MonoBehaviour
         }
     }
     
-    // Use this for initialization
     void Start()
     {
         // Sets references to Menus
@@ -38,6 +39,15 @@ public class MenuController : MonoBehaviour
             }
         }	
 	}
+
+    /// <summary>
+    /// Disables Main Menu then Starts Game through Game Controller
+    /// </summary>
+    public void StartGame()
+    {
+        DisbleAllMenu();
+        GameController.Instance.StartGame();
+    }
 
     public void SwitchToMainMenu()
     {
