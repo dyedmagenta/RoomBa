@@ -58,4 +58,13 @@ public class MenuController : MonoBehaviour
             child.gameObject.SetActive(false);
         }
     }
+
+    public void QuitGame()
+    {
+        if (UnityEditor.EditorApplication.isPlaying == true)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+        Application.Quit();
+    }
 }
