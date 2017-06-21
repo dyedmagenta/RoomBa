@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Options Menu
   - Main Menu
+  - Start Point
   layers:
   - Default
   - TransparentFX

@@ -6,20 +6,30 @@ using UnityEngine;
 /// Initializes Game Board
 /// Communication between UI and state of the game
 /// Generates Level (Przemek), 
-/// Instantiates RoomBa command panel (Krzysiek)
-/// Main Game Loop
+/// Instantiates command panel (Krzysiek)
+/// 
+/// Manages Game Loop
 /// </summary>
 public class GameController : MonoBehaviour
 {
     //Example Prototype level
-    //Level has to contain - RoomBa, Obstacles, Starting Point
     public GameObject PrototypeLevel;
 
+    //Flag for prototyping true for generated level, false for level prototype
+    public bool IsLevelGenerated;
+    
     //Level that should be generated
     private GameObject _generatedLevel;
 
+    private GameObject _level;
+    private GameObject _roomBa;
+    private GameObject _commandPanel;
+    private Transform _startPoint;
+
     //Prototype CommandPanel
     public GameObject CommandPanel;
+
+    public GameObject RoomBa;
 
     public static GameController Instance { get; private set; }
     private void Awake()
@@ -40,7 +50,50 @@ public class GameController : MonoBehaviour
     /// </summary>
     public void StartGame()
     {
-        Instantiate(GameBoard);
+        GenerateLevel();
+        CreateCommandPanel();
+        CreateRoomBa();
+        
+        Debug.Log("Game Started!");
     }
-    
+
+    /// <summary>
+    /// Generates Level and sets up references like starting point in the level
+    /// </summary>
+    private void GenerateLevel()
+    {
+        if (IsLevelGenerated)
+        {
+            // Generate Level
+            _level = Instantiate(_generatedLevel);
+        }
+        else
+        {
+            // Use Prototype
+            _level = Instantiate(PrototypeLevel);
+        }
+
+        foreach (Transform child in _level.transform)
+        {
+            if (child.tag == "Start Point")
+            {
+                _startPoint = child;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Instantiates and sets up references to CommandPanel
+    /// </summary>
+    private void CreateCommandPanel()
+    {
+        if (CommandPanel == null) return;
+        
+        _commandPanel = Instantiate(CommandPanel);
+    }
+
+    private void CreateRoomBa()
+    {
+       _roomBa = Instantiate(RoomBa, _startPoint.position, _startPoint.rotation);
+    }
 }
