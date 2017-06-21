@@ -22,14 +22,14 @@ public class GameController : MonoBehaviour
     private GameObject _generatedLevel;
 
     private GameObject _level;
-    private GameObject _roomBa;
+    private GameObject _roomba;
     private GameObject _commandPanel;
     private Transform _startPoint;
 
     //Prototype CommandPanel
     public GameObject CommandPanel;
 
-    public GameObject RoomBa;
+    public GameObject Roomba;
 
     public static GameController Instance { get; private set; }
     private void Awake()
@@ -94,6 +94,6 @@ public class GameController : MonoBehaviour
 
     private void CreateRoomBa()
     {
-       _roomBa = Instantiate(RoomBa, _startPoint.position, _startPoint.rotation);
+       _roomba = Instantiate(Roomba, _startPoint.position, _startPoint.rotation);
     }
 }
