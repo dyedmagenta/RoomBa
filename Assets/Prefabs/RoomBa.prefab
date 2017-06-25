@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33872772457811578}
   - component: {fileID: 23072517967872728}
   m_Layer: 0
-  m_Name: Roomba Body
+  m_Name: Roomba Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,8 +39,9 @@ GameObject:
   - component: {fileID: 54968429647154166}
   - component: {fileID: 65139241972516366}
   - component: {fileID: 114796753434424128}
+  - component: {fileID: 114963608274238458}
   m_Layer: 0
-  m_Name: Roomba
+  m_Name: RoomBa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1999062778865374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 6.041394, y: 0.84, z: 0.22511578}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4262583140351990}
@@ -153,3 +154,15 @@ MonoBehaviour:
   Speed: 8
   TurnSpeed: 180
   IsMovingWithKeypresses: 1
+--- !u!114 &114963608274238458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1999062778865374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77285bf60234f9b40a2531ef4b936981, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sensor: {fileID: 1529693403987660, guid: 55e68e59fec4f9843bafbb414759dec6, type: 2}

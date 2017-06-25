@@ -90,7 +90,9 @@ public class GameController : MonoBehaviour
         if (CommandPanel == null) return;
         
         _commandPanel = Instantiate(CommandPanel);
-        _commandPanel.GetComponent<CommandPanelController>().RoombaEngines = _roomba.GetComponent<RoombaEngines>();
+        var commandPanelController = _commandPanel.GetComponent<CommandPanelController>();
+        commandPanelController.RoombaEngines = _roomba.GetComponent<RoombaEngines>();
+        commandPanelController.RoombaSensors = _roomba.GetComponent<RoombaSensors>();
     }
 
     private void CreateRoomBa()
