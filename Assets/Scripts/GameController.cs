@@ -51,9 +51,9 @@ public class GameController : MonoBehaviour
     public void StartGame()
     {
         GenerateLevel();
-        CreateCommandPanel();
         CreateRoomBa();
-        
+        CreateCommandPanel();
+
         Debug.Log("Game Started!");
     }
 
@@ -90,6 +90,7 @@ public class GameController : MonoBehaviour
         if (CommandPanel == null) return;
         
         _commandPanel = Instantiate(CommandPanel);
+        _commandPanel.GetComponent<CommandPanelController>().RoombaEngines = _roomba.GetComponent<RoombaEngines>();
     }
 
     private void CreateRoomBa()
