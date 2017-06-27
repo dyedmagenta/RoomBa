@@ -153,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 8
   TurnSpeed: 180
-  IsMovingWithKeypresses: 1
+  IsMovingWithKeypresses: 0
 --- !u!114 &114963608274238458
 MonoBehaviour:
   m_ObjectHideFlags: 1
